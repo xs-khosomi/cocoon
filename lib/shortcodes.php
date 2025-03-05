@@ -119,7 +119,7 @@ function new_entries_shortcode($atts) {
   );
   ob_start();
   generate_widget_entries_tag($atts);
-  $res = ob_get_clean();
+  $res = change_fa(ob_get_clean());
   return $res;
 }
 endif;
@@ -194,7 +194,7 @@ function popular_entries_shortcode($atts) {
   );
   ob_start();
   generate_popular_entries_tag($atts);
-  $res = ob_get_clean();
+  $res = change_fa(ob_get_clean());
   return $res;
 }
 endif;
@@ -1072,7 +1072,8 @@ function get_block_pattern_shortcode($atts) {
     array(
       'id' => null,
     ),
-    $atts
+    $atts,
+    'pattern'
   ));
 
   $content = null;
@@ -1175,7 +1176,8 @@ function get_font_awesome_icon_tag($atts){
     array(
       'class' => '',
     ),
-    $atts
+    $atts,
+    'icon'
   );
 
   return '<span class="' . esc_attr($atts['class']) . '"></span>';
