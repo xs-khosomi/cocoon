@@ -651,6 +651,10 @@ button#comment-reply-btn {
 	z-index: 1;
 }
 
+.nwa .author-box .author-thumb img {
+	border: none;
+}
+
 .author-thumb:before {
 	content: "";
 	position: absolute;
